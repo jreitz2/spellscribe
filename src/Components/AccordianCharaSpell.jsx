@@ -11,7 +11,7 @@ const AccordianCharaSpell = ({ spell, character, userData, setUserData }) => {
 
     const handleSpellToggle = async () => {
         if (!expanded) {
-            const response = await fetch(`http://www.dnd5eapi.co${spell.url}`)
+            const response = await fetch(`https://www.dnd5eapi.co${spell.url}`)
             const data = await response.json();
             setSpellDetails(data);
         }

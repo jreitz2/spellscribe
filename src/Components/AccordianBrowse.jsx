@@ -13,7 +13,7 @@ const AccordianBrowse = ({ spell, selectedCharacter, userData, setUserData }) =>
 
     const handleToggle = async () => {
         if (!expanded) {
-            const response = await fetch(`http://www.dnd5eapi.co/api/spells/${spell.index}`)
+            const response = await fetch(`https://www.dnd5eapi.co/api/spells/${spell.index}`)
             const data = await response.json();
             setSpellDetails(data);
         }

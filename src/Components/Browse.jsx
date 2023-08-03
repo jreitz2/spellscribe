@@ -24,7 +24,7 @@ const Browse = ({ userData, selectedCharacter, setUserData }) => {
     if (browseParameters.class !== "") {
       browseClass = `classes/${browseParameters.class}/spells`;
       try {
-        const response = await fetch(`http://www.dnd5eapi.co/api/${browseClass}`);
+        const response = await fetch(`https://www.dnd5eapi.co/api/${browseClass}`);
         data1 = await response.json();
         
         if (browseParameters.class !== "" && browseParameters.level === "" && browseParameters.school === "") {
@@ -47,7 +47,7 @@ const Browse = ({ userData, selectedCharacter, setUserData }) => {
     }
 
     try {
-      const response2 = await fetch(`http://www.dnd5eapi.co/api/${browseTerm}`);
+      const response2 = await fetch(`https://www.dnd5eapi.co/api/${browseTerm}`);
       const data2 = await response2.json();
 
       if(browseParameters.class !== "") {

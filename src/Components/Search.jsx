@@ -16,7 +16,7 @@ const Search = ({ userData, selectedCharacter, setUserData }) => {
         if (searchTerm !== "") {
             const newSearchTerm = searchTerm.replace(/ /g, '-').toLowerCase();
             try {
-                const response = await fetch(`http://www.dnd5eapi.co/api/spells/${newSearchTerm}`);
+                const response = await fetch(`https://www.dnd5eapi.co/api/spells/${newSearchTerm}`);
                 const data = await response.json();
                 
                 if (data.error) {

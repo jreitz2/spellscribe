@@ -31,7 +31,7 @@ const AccordianCharaSpell = ({ spell, character, userData, setUserData }) => {
             ...userData,
             characters: updatedCharacters,
         }
-        const response = await axios.put(`http://localhost:5000/update-user/${userData._id}`, updatedUserData);
+        const response = await axios.put(`https://spellscribe-api.onrender.com/update-user/${userData._id}`, updatedUserData);
         console.log(response.data);
         setUserData(updatedUserData);
     }

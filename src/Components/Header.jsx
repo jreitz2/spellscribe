@@ -5,7 +5,7 @@ const Header = ({ isLoggedIn, setIsLoggedIn, userData, setUserData }) => {
 
     const handleLogout = async () => {
         try {
-          const response = await axios.post('http://localhost:5000/logout');
+          const response = await axios.post('https://spellscribe-api.onrender.com/logout');
           setIsLoggedIn(false);
           setUserData({});
           console.log(response.data);

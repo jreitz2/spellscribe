@@ -17,13 +17,13 @@ const Characters = ({ userData, setUserData, selectedCharacter, setSelectedChara
     const handleCreateCharacter = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.put(`http://localhost:5000/create-character/${userData._id}`, newCharacterForm);
+            const response = await axios.put(`https://spellscribe-api.onrender.com/create-character/${userData._id}`, newCharacterForm);
             console.log(response.data);
             setNewCharacterForm({
                 characterName: "",
                 characterClass: ""
             });
-            const response2 = await axios.get('http://localhost:5000/check-login');
+            const response2 = await axios.get('https://spellscribe-api.onrender.com/check-login');
             setUserData(response2.data.user);
         } catch (err) {
             console.log(err);
@@ -36,7 +36,7 @@ const Characters = ({ userData, setUserData, selectedCharacter, setSelectedChara
                 ...userData,
                 characters: userData.characters.filter((character) => character._id !== characterId),
             }
-            const response = await axios.put(`http://localhost:5000/update-user/${userData._id}`, updatedUserData);
+            const response = await axios.put(`https://spellscribe-api.onrender.com/update-user/${userData._id}`, updatedUserData);
             console.log(response.data);
             setUserData(updatedUserData);
         } catch (err) {

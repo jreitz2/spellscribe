@@ -30,7 +30,7 @@ const Login = ({ isLoggedIn, setIsLoggedIn, setUserData }) => {
     const handleSignup = async (e) => {
       e.preventDefault();
       try {
-        const response = await axios.post('http://localhost:5000/signup', signupForm);
+        const response = await axios.post('https://spellscribe-api.onrender.com/signup', signupForm);
         console.log(response.data.message);
         setSignupForm({
           username: '',
@@ -45,7 +45,7 @@ const Login = ({ isLoggedIn, setIsLoggedIn, setUserData }) => {
     const handleLogin = async (e) => {
       e.preventDefault();
       try {
-        const response = await axios.post('http://localhost:5000/login', loginForm);
+        const response = await axios.post('https://spellscribe-api.onrender.com/login', loginForm);
         console.log(response.data)
         setLoginForm({
             username: '',

@@ -6,7 +6,7 @@ axios.defaults.withCredentials = true;
 const Characters = ({ userData, setUserData, selectedCharacter, setSelectedCharacter }) => {
     const [newCharacterForm, setNewCharacterForm] = useState({
         characterName: "",
-        characterClass: ""
+        characterClass: "Bard"
     });
 
     const handleChange = (e) => {
@@ -38,6 +38,9 @@ const Characters = ({ userData, setUserData, selectedCharacter, setSelectedChara
             }
             const response = await axios.put(`https://spellscribe-api.onrender.com/update-user/${userData._id}`, updatedUserData);
             console.log(response.data);
+            if(characterId === selectedCharacter) {
+                setSelectedCharacter(undefined);
+            }
             setUserData(updatedUserData);
         } catch (err) {
             console.log(err);

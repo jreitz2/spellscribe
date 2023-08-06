@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: darkred;
+  background-color: rgb(255, 241, 210);
   font-size: 1.5rem;
   background-image: url('./assets/paper1.jpg');
 }
@@ -29,6 +29,7 @@ button {
   border-radius: 5px;
   box-shadow: 1px 1px 1px black;
   background-color: rgb(255, 241, 210);
+  color: black;
 }
 
 button:hover {
@@ -64,6 +65,7 @@ input, select {
   font-size: 1.5rem;
   margin: 5px;
   padding: 5px;
+  color: black;
 }
 
 li {

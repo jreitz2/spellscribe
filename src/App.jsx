@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     const checkLoginStatus = async () => {
       try {
-        const response = await axios.get('https://spellscribe-api.onrender.com/check-login');
+        const response = await axios.get('https://spellscribe-api.onrender.com/check-login', { withCredentials: true });
         setIsLoggedIn(response.data.loggedIn);
         setUserData(response.data.user);
         console.log(response.data);

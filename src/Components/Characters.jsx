@@ -23,7 +23,7 @@ const Characters = ({ userData, setUserData, selectedCharacter, setSelectedChara
                 characterName: "",
                 characterClass: ""
             });
-            const response2 = await axios.get('https://spellscribe-api.onrender.com/check-login');
+            const response2 = await axios.get('https://spellscribe-api.onrender.com/check-login', { withCredentials: true });
             setUserData(response2.data.user);
         } catch (err) {
             console.log(err);

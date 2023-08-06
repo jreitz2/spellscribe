@@ -19,12 +19,25 @@ const Characters = ({ userData, setUserData, selectedCharacter, setSelectedChara
         try {
             const response = await axios.put(`https://spellscribe-api.onrender.com/create-character/${userData._id}`, newCharacterForm);
             console.log(response.data);
+            
+            const newCharacter = {
+                characterName: newCharacterForm.characterName,
+                characterClass: newCharacterForm.characterClass,
+                spells: [],
+            }
+
+            const updatedUserData = {
+                ...userData,
+                characters: [...userData.characters, newCharacter],
+            }
+            setUserData(updatedUserData);
+            
             setNewCharacterForm({
                 characterName: "",
-                characterClass: ""
+                characterClass: "Bard"
             });
-            const response2 = await axios.get('https://spellscribe-api.onrender.com/check-login', { withCredentials: true });
-            setUserData(response2.data.user);
+            // const response2 = await axios.get('https://spellscribe-api.onrender.com/check-login', { withCredentials: true });
+            // setUserData(response2.data.user);
         } catch (err) {
             console.log(err);
         }
